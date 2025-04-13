@@ -28,8 +28,8 @@ jobs:
                   sed -i -e "s/\%DISCORD_BOT_TOKEN/$DISCORD_BOT_TOKEN/g" .env
                   sed -i -e "s/\%DISCORD_OAUTH_CLIENT_ID/$DISCORD_OAUTH_CLIENT_ID/g" .env
               env:
-                  DISCORD_TOKEN: ${{secrets.DISCORD_BOT_TOKEN}}
-                  DISCORD_CLIENT_ID: ${{secrets.DISCORD_OAUTH_CLIENT_ID}}
+                  DISCORD_BOT_TOKEN: ${{secrets.DISCORD_BOT_TOKEN}}
+                  DISCORD_OAUTH_CLIENT_ID: ${{secrets.DISCORD_OAUTH_CLIENT_ID}}
             - name: Install PM2
               run: |
                   npm i pm2
