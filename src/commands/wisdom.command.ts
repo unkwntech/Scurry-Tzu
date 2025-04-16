@@ -31,9 +31,13 @@ export default {
         .setName("wisdom")
         .setDescription("Prompts Scurry Tzu to dispense a nibble of wisdom."),
     execute: async (interaction: ChatInputCommandInteraction) => {
-        var wis = wisdom.shift();
-        wisdom.push(wis ?? "");
+        try {
+            var wis = wisdom.shift();
+            wisdom.push(wis ?? "");
 
-        interaction.reply(wis ?? "");
+            interaction.reply(wis ?? "");
+        } catch (e: any) {
+            console.error(e);
+        }
     },
 };
